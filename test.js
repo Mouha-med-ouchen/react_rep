@@ -1,2 +1,2 @@
-cost x = 10;
-consol.log x ;
+const x = 10;
+
