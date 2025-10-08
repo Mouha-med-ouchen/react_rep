@@ -1,17 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import Form from './hello/Form';
+import Fruite from './fruite/Fruite';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const fruitsArray = [
+'aloios',
+'aloios',
+  'aloios',
+'bbbbb'
+]
 root.render(
   <React.StrictMode>
-    <Form LB="your name" PL="entre your name">
-      pleas you can add you name ?
-    </Form>
-     <Form LB="your last name" PL="entre your last name">
-      pleas you can add you last name ?
-   </Form>
+  
+  <Fruite fruits={fruitsArray}></Fruite>
+   
   </React.StrictMode>
 );
 

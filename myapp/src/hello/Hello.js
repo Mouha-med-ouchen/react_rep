@@ -1,17 +1,21 @@
 
 export default function Hello({ name }) {
-     return (
-         <>
-             <h1>hello mohamed in your app</h1>
-             <p>hello{name} </p>
+    const age = 109;
+ 
+    return (
+        <> 
+            <h1>HeLLo {name} is { age >= 18 ? 'ADULt ': 'MINOR'}</h1>
         </>
     )
+     
+      
+    
+     
+     
+    
+    
 }
-// import React from "react";
-
-
-// export default class Hello extends React.Component{
-//     render() {
+// import React from "react";//     render() {
 //         return (
 //             <>
 //                 <h1>hello mohamed in your app</h1>
