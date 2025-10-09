@@ -1,31 +1,17 @@
-import { Component } from "react";
+import { useState } from "react";
 
-export default class Timer extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            seconds: 0
-        };
-    }
+export default function Counter() {
+    const [count, setCount] = useState(0);
 
-    componentDidMount() {
-        this.interval = setInterval(() => {
-            this.setState(prevState => ({
-                seconds: prevState.seconds + 1
-            }));
-        }, 1000);
-    }
-
-    componentWillUnmount() {
-        clearInterval(this.interval); // نوقف العداد عند إزالة المكون
-    }
-
-    render() {
-        return (
-            <div>
-                <h2>⏱️ Timer Test</h2>
-                <p>Time since mount: {this.state.seconds} seconds</p>
+    return (
+        <>
+            <h2>🧩 Hook Test</h2>
+            <h1>{count}</h1>
+            <div style={{ display: "flex", gap: "10px" }}>
+                <button onClick={() => setCount(c => c + 1)}>+1</button>
+                <button onClick={() => setCount(c => c - 1)}>-1</button>
+                <button onClick={() => setCount(0)}>rest!</button>
             </div>
-        );
-    }
+        </>
+    );
 }
