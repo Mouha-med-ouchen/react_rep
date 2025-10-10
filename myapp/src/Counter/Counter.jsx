@@ -1,17 +1,31 @@
-import { useState } from "react";
+import { Component } from "react";
 
-export default function Counter() {
-    const [count, setCount] = useState(0);
+export default class Counter extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            displayName: true,
+        };
+    }
 
-    return (
-        <>
-            <h2>🧩 Hook Test</h2>
-            <h1>{count}</h1>
-            <div style={{ display: "flex", gap: "10px" }}>
-                <button onClick={() => setCount(c => c + 1)}>+1</button>
-                <button onClick={() => setCount(c => c - 1)}>-1</button>
-                <button onClick={() => setCount(0)}>rest!</button>
-            </div>
-        </>
-    );
+    toggleName = () => {
+        this.setState(prevState => ({
+            displayName: !prevState.displayName
+        }));
+
+    };
+
+    render() {
+        return (
+            <>
+                <button onClick={this.toggleName}>
+                    - {this.state.displayName.toString()} -
+                </button>
+
+                {this.state.displayName === true ? <h1>Hello Mohamed</h1> : undefined}
+            </>
+        );
+    }
 }
+
+
