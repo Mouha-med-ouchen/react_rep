@@ -1,36 +1,103 @@
-import { useState } from "react"
+import { useState } from "react";
 
 export default function Form() {
+    const [formValues, setFormValues] = useState({
+        name: "",
+        age: "",
+        accept: false,
+        country: ""  
+    });
 
-    const [name, setName] = useState('');
-    const [age, setAge] = useState('');
-    const handeNameInput = () => {
-        const name = document.getElementById('name').value
-        setName(name)
-    }
+    const handleChange = (e) => {
+        const id = e.currentTarget.id;
+        const value = e.currentTarget.type === "checkbox"
+            ? e.currentTarget.checked
+            : e.currentTarget.value;
 
-    const handeAgeInput = () => {
-        const age = document.getElementById('age').value
-        setAge(age)
-    }
-    const submit = (e) => {
-        e.preventDefault()
-        console.log({
-            name: name,
-            age: age
-        })
-    }
-    return <>
+        setFormValues(prev => ({
+            ...prev,
+            [id]: value
+        }));
+    };
 
-        <input name="name" id="name" type="text" placeholder="name" onChange={handeNameInput} />
-        <input type="number" id="age" name="age" placeholder="age" onChange={handeAgeInput} />
-        <input type="submit" onClick={submit} value="add" />
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Form values:", formValues);
+    };
 
+    return (
+        <div className="container mt-5">
+            <h2 className="text-center mb-4 text-primary">User Form</h2>
+            <form className="border p-4 rounded shadow-sm bg-light" onSubmit={handleSubmit}>
+                {/* Name */}
+                <div className="form-group mb-3">
+                    <label htmlFor="name" className="form-label">Name:</label>
+                    <input
+                        type="text"
+                        id="name"
+                        className="form-control"
+                        value={formValues.name}
+                        onChange={handleChange}
+                    />
+                </div>
 
-        <div>
-            <h1>name and age are modifed</h1>
-            <h2>name:{name}</h2>
-            <h2>age: {age}</h2>
+                {/* Age */}
+                <div className="form-group mb-3">
+                    <label htmlFor="age" className="form-label">Age:</label>
+                    <input
+                        type="number"
+                        id="age"
+                        className="form-control"
+                        value={formValues.age}
+                        onChange={handleChange}
+                    />
+                </div>
+
+                {/* Country Select */}
+                <div className="form-group mb-3">
+                    <label htmlFor="country" className="form-label">Country:</label>
+                    <select
+                        id="country"
+                        className="form-select"
+                        value={formValues.country}
+                        onChange={handleChange}
+                    >
+                        <option value="">Select your country</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="USA">USA</option>
+                        <option value="France">France</option>
+                        <option value="Japan">Japan</option>
+                    </select>
+                </div>
+
+                {/* Accept Rules */}
+                <div className="form-check mb-4">
+                    <input
+                        type="checkbox"
+                        id="accept"
+                        className="form-check-input"
+                        checked={formValues.accept}
+                        onChange={handleChange}
+                    />
+                    <label htmlFor="accept" className="form-check-label ms-2">
+                        Accept Rules
+                    </label>
+                </div>
+
+                {/* Submit Button */}
+                <button type="submit" className="btn btn-primary w-100">
+                    Submit
+                </button>
+            </form>
+
+            {/* Preview */}
+            <div className="mt-4">
+                <h5>Preview:</h5>
+                <p><strong>Name:</strong> {formValues.name}</p>
+                <p><strong>Age:</strong> {formValues.age}</p>
+                <p><strong>Country:</strong> {formValues.country}</p>
+                <p><strong>Accepted Rules:</strong> {formValues.accept ? "Yes" : "No"}</p>
+            </div>
         </div>
-    </>
+    );
 }
