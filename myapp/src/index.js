@@ -4,12 +4,12 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import FormRef from './Form/FormRef';
+import Page from './LanguagSwitcher/Page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <FormRef></FormRef>
+    <Page></Page>
   </React.StrictMode>
 );
 

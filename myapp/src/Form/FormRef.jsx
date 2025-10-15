@@ -29,7 +29,7 @@ export default function Formref() {
 
     return (
         <div className="container mt-5">
-            <h1>{(new Date()).toLocaleString()}</h1>
+             
             <h2 className="text-center mb-4 text-primary">User Form</h2>
             <form onSubmit={handleSubmit} className="border p-4 rounded shadow-sm bg-light" >
                 {/* Name */}
