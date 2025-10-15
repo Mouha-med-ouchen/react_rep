@@ -4,12 +4,12 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import Page from './LanguagSwitcher/Page';
+import FormValidation from './FormValiation/FormValidation';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Page></Page>
+    <FormValidation></FormValidation>
   </React.StrictMode>
 );
 
