@@ -4,12 +4,12 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import CarList from './Cars/CarList';
+import Math from './UseCallback/Math';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-  <CarList></CarList>
+  <Math></Math>
   </React.StrictMode>
 );
 
