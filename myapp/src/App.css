@@ -41,3 +41,12 @@
     transform: rotate(360deg);
   }
 }
+
+.app {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}

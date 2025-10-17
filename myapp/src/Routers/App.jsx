@@ -4,6 +4,7 @@ import Layout from './Pages/Layout';
 import Contact from './Contact';
 import About from './About';
 import Home from './Home';
+import PageNotFound from './PageNotFound'
 
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
                         <Route
                             path='contact' element={<Contact></Contact>}></Route>
                         <Route path='about' element={<About></About>}></Route>
+                        <Route path='*' element={<PageNotFound></PageNotFound>}></Route>
                     </Route>
                 </Routes>
             </BrowserRouter>
