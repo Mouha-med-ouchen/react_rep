@@ -50,3 +50,25 @@
   justify-content: center;
   transition: all 0.3s ease;
 }
+
+/* Note: You need to have Bootstrap Icons included for the icons (bi-* classes) */
+
+.user-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px !important;
+  /* Rounded corners for the whole card */
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  /* Lift the card on hover */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+  /* Deeper shadow on hover */
+}
+
+/* Custom gradient header */
+.card-header-custom {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  /* Blue Gradient */
+  border-bottom: none;
+}

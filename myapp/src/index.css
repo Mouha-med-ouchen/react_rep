@@ -11,3 +11,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Note: You need to have Bootstrap Icons included for the icons (bi-* classes) */
+
+.user-card {
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  border-radius: 10px !important;
+  /* Rounded corners for the whole card */
+  cursor: pointer;
+}
+
+.user-card:hover {
+  transform: translateY(-5px);
+  /* Lift the card on hover */
+  box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175) !important;
+  /* Deeper shadow on hover */
+}
+
+/* Custom gradient header */
+.card-header-custom {
+  background: linear-gradient(45deg, #007bff, #0056b3);
+  /* Blue Gradient */
+  border-bottom: none;
+}
+
+/* Custom Table Styling for a Modern Look */
+.todos-table {
+  /* Use a slight shadow for depth */
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.08);
+  border-radius: 8px;
+  /* Rounded corners for the container */
+  overflow: hidden;
+  /* Ensures the rounded corners apply correctly */
+}
+
+/* Custom Header Styles */
+.custom-thead {
+  /* Subtle gradient for a premium feel */
+  background: linear-gradient(90deg, #e9ecef, #f8f9fa);
+  color: #495057;
+  /* Darker text color */
+  border-bottom: 2px solid #0d6efd;
+  /* Stronger separation line */
+}
+
+.custom-thead th {
+  font-weight: 600;
+  /* Slightly bolder header text */
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Completed Row Visual Feedback */
+.completed-row {
+  opacity: 0.85;
+  /* Dims completed rows slightly */
+  transition: background-color 0.3s ease;
+}
+
+/* Enhancing Hover Effect */
+.todos-table tbody tr:hover {
+  background-color: #f1f1f1;
+  /* Consistent hover color */
+  box-shadow: inset 3px 0 0 0 #0d6efd;
+  /* Highlight left border on hover */
+  cursor: pointer;
+}
