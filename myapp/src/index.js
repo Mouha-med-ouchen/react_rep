@@ -5,15 +5,18 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 
-import Math from './UseMemo/Math';
-import UsersList from './CustomHooks/UserList';
-import TodosList from './CustomHooks/TodoList';
+import './Redux/example.js';
+import Provider from 'react-redux';
+import Counter from './Redux/Counter.jsx';
+import store from './Redux/Store/index.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <UsersList></UsersList>
-    <TodosList></TodosList>
+    <Provider store={store}> 
+ <Counter></Counter>
+    </Provider>
+      
   </React.StrictMode>
 );
 

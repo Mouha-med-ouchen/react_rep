@@ -5,7 +5,6 @@ export default function Math() {
     const [time, setTime] = useState(0);
     const text = useRef();
 
-    // دالة الحساب المكلف
     const expensiveCalcul = (value) => {
         console.log('Calcul in progress');
         for (let i = 0; i <= 10000000; i++) {
@@ -14,7 +13,6 @@ export default function Math() {
         return value;
     };
 
-    // حفظ نتيجة الحساب عند تغير n
     const calculatedValue = useMemo(() => {
         const start = performance.now();
         const result = expensiveCalcul(n);
@@ -23,7 +21,6 @@ export default function Math() {
         return result;
     }, [n]);
 
-    // عند الضغط على الزر
     const handleClick = () => {
         setN(parseInt(text.current.value));
     };
